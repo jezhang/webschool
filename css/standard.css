@@ -1,0 +1,245 @@
+/**
+50 Useful CSS Snippets Every Designer Should Have
+http://www.hongkiat.com/blog/css-snippets-for-designers/
+**/
+
+/*1. CSS Resets*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html { height: 101%; }
+body { font-size: 62.5%; line-height: 1; font-family: Arial, Tahoma, sans-serif; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong { font-weight: bold; } 
+
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: 0; max-width: 100%; }
+
+p { font-size: 1.2em; line-height: 1.0em; color: #333; }
+
+
+/*2. Classic CSS Clearfix*/
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; }
+ 
+html[xmlns] .clearfix { display: block; }
+* html .clearfix { height: 1%; }
+
+/*3. 2011 Updated Clearfix*/
+.clearfix:before, .container:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+
+/* IE 6/7 */
+.clearfix { zoom: 1; }
+
+/*4. Cross-Browser Transparency*/
+.transparent {
+    filter: alpha(opacity=50); /* internet explorer */
+    -khtml-opacity: 0.5;      /* khtml, old safari */
+    -moz-opacity: 0.5;       /* mozilla, netscape */
+    opacity: 0.5;           /* fx, safari, opera */
+}
+
+
+/*5. CSS Blockquote Template*/
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: .5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: .1em;
+    margin-right: .25em;
+    vertical-align: -.4em;
+}
+blockquote p {
+    display: inline;
+}
+
+/*6. Individual Rounded Corners*/
+#container {
+    -webkit-border-radius: 4px 3px 6px 10px;
+    -moz-border-radius: 4px 3px 6px 10px;
+    -o-border-radius: 4px 3px 6px 10px;
+    border-radius: 4px 3px 6px 10px;
+}
+
+/* alternative syntax broken into each line */
+#container {
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 6px;
+    -webkit-border-bottom-left-radius: 10px;
+    
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 6px;
+    -moz-border-radius-bottomleft: 10px;
+}
+
+/*7. General Media Queries*/
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+  /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+  /* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  /* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+  /* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+  /* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+  /* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio:1.5), only screen and (min-device-pixel-ratio:1.5) {
+  /* Styles */
+}
+
+/* 8. Modern Font Stacks */
+/* Times New Roman-based serif */
+font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+
+/* A modern Georgia-based serif */
+font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif," "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+
+/*A more traditional Garamond-based serif */
+font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+
+/*The Helvetica/Arial-based sans serif */
+font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/*The Verdana-based sans serif */
+font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+
+/*The Trebuchet-based sans serif */
+font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+
+/*The heavier "Impact" sans serif */
+font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+
+/*The monospace */
+font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+
+
+/* 9. Custom Text Selection */
+::selection { background: #e2eae2; }
+::-moz-selection { background: #e2eae2; }
+::-webkit-selection { background: #e2eae2; }
+
+/* 10. Hiding H1 Text For Logo */
+h1 {
+    text-indent: -9999px;
+    margin: 0 auto;
+    width: 320px;
+    height: 85px;
+    background: transparent url("images/logo.png") no-repeat scroll;
+}
+
+/* 11. Polaroid Image Border */
+img.polaroid {
+    background:#000; /*Change this to a background image or remove*/
+    border:solid #fff;
+    border-width:6px 6px 20px 6px;
+    box-shadow:1px 1px 5px #333; /* Standard blur at 5px. Increase for more depth */
+    -webkit-box-shadow:1px 1px 5px #333;
+    -moz-box-shadow:1px 1px 5px #333;
+    height:200px; /*Set to height of your image or desired div*/
+    width:200px; /*Set to width of your image or desired div*/
+}
+
+/* 12. Anchor Link Pseudo Classes */
+a:link { color: blue; }
+a:visited { color: purple; }
+a:hover { color: red; }
+a:active { color: yellow; }
+
+/* 13. Fancy CSS3 Pull-Quotes */
+.has-pullquote:before {
+	/* Reset metrics. */
+	padding: 0;
+	border: none;
+	
+	/* Content */
+	content: attr(data-pullquote);
+	
+	/* Pull out to the right, modular scale based margins. */
+	float: right;
+	width: 320px;
+	margin: 12px -140px 24px 36px;
+	
+	/* Baseline correction */
+	position: relative;
+	top: 5px;
+	
+	/* Typography (30px line-height equals 25% incremental leading) */
+	font-size: 23px;
+	line-height: 30px;
+}
+
+.pullquote-adelle:before {
+	font-family: "adelle-1", "adelle-2";
+	font-weight: 100;
+	top: 10px !important;
+}
+
+.pullquote-helvetica:before {
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	font-weight: bold;
+	top: 7px !important;
+}
+
+.pullquote-facit:before {
+	font-family: "facitweb-1", "facitweb-2", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	top: 7px !important;
+}
+
+
