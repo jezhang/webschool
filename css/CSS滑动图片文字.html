@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>滑动说明文字</title>
+<style type="text/css" media="all">
+.slide_bg{border:#999999 3px solid;width:207px;height:106px;position:relative;overflow:hidden;float:left;margin-right:16px;margin-top:26px;}
+.slide_img{background-image:url(/jscss/demoimg/wall1.jpg);width:207px;height:106px;}
+.slide_txt{width:197px;height:100px;background-color:#000000;position:absolute;top:106px;left:0px;color:#FFCC33;line-height:22px;padding:5px;font-size:12px;}
+</style>
+<script language="javascript" type="text/javascript">
+var slide_content=function(){
+   var id="slide_content"  //滑动图片父容器的id名
+   var interval=10;    //滑动速度
+   var interval2=100;  //文字滑出延迟时间(毫秒)
+   var interval3=500;  //文字内容自动消失的延迟时间(毫秒)
+   var opacity=69;     //文字内容图层透明度
+   var timer2=new Array();
+   var elem=new Array(); 
+   var status=new Array();
+   var div=document.getElementById(id).getElementsByTagName("div");
+   var timer3=0;    
+   //run_animation
+    var d=function(){
+var timer,obj,txt;var ypos=100;
+      this.run=function(pra1,pra2,dir){obj=pra1;txt=pra2;if(dir>0){clearTimeout(timer);clearTimeout(timer3);timer3=setTimeout(obj.up,interval2);}else{clearTimeout(timer);obj.down()};txt.style.filter="alpha(opacity="+opacity+")";txt.style.opacity=opacity/100;}
+//向上滑动
+      this.up=function(){if(ypos<=0){txt.style.top="0px"}else{ypos-=10;txt.style.top=ypos+"px";timer=setTimeout(obj.up,interval)}}
+//向下滑动
+      this.down=function(){if(ypos>=106){txt.style.top="106px";}else{ypos+=15;txt.style.top=ypos+"px";timer=setTimeout(obj.down,interval)}}
+    }
+	//init mouse_behavior
+	for(var i=0;i<div.length;i+=3){
+	    div[i+1].index=div[i+2].index=i+2;
+		elem[i+2]=new d();
+		div[i+1].onmouseover=function(){elem[this.index].run(elem[this.index],div[this.index],1)};
+		div[i+1].onmouseout=function(){var n=this.index;if(status[n]!=1){timer2[n]=setTimeout(imgout,interval3)};function imgout(){elem[n].run(elem[n],div[n],-1)}}					 
+		div[i+2].onmouseout=function(){elem[this.index].run(elem[this.index],div[this.index],-1);status[this.index]=0}
+	    div[i+2].onmouseover=function(){clearTimeout(timer2[this.index]);status[this.index]=1}
+	}
+}
+//网页加载完毕时，启动函数
+window.onload=slide_content;
+</script>
+</head>
+<body>
+<div id="slide_content">
+  <div class="slide_bg">
+    <div class="slide_img"></div>
+    <div class="slide_txt">春天：<br />春天是播种的季节。</div>
+  </div>
+  <div class="slide_bg">
+    <div class="slide_img"></div>
+    <div class="slide_txt">夏天：<br />夏天是火热的季节。</div>
+  </div>
+  <div class="slide_bg">
+    <div class="slide_img"></div>
+    <div class="slide_txt">秋天：<br />秋天是丰收的季节。</div>
+  </div>
+  <div class="slide_bg">
+    <div class="slide_img"></div>
+    <div class="slide_txt">冬天：<br />冬天是雷人的季节。</div>
+  </div>
+</div>
+</body>
+</html>
