@@ -1,0 +1,21 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>Javascript实现离开页面时提示用户</title>
+    <script type="text/javascript">
+    	var is_uploading = true;
+
+    	function alert_if_uploading() {
+    		if (is_uploading) {
+    			return '文件正在上传中，您确定要离开当前页面？';
+    		}
+    	}
+    	window.onbeforeunload = alert_if_uploading;
+    </script>
+</head>
+<body>
+    <h1>Javascript实现离开页面时提示用户</h1>
+    
+</body>
+</html>
